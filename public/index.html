@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Vue Todo</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Testing out some cool things with Mouse movement!</h1>
+        <div id='board'>
+            <div id='board-body'>
+                <div class='board-row' v-for="row in board_size">
+                    <div class='boggle-tile' v-for="col in board_size" v-on:mouseenter="mouseenter($event, row, col)">
+                        <label>{{ getBoardChar(row, col) }}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id='footer'>
+        <div>
+            <hr id='footer-break'>
+        </div>
+        <div>
+            <p>Here's a link to the <a href='https://github.com/BYU-CS260-Winter-2018/lab-4-gainge'>Github</a></p>
+        </di>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js" integrity="sha256-pU9euBaEcVl8Gtg+FRYCtin2vKLN8sx5/4npZDmY2VA=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
