@@ -104,9 +104,9 @@ var app = new Vue({
         boardSet: false,
         word: '',
         text: '',
-        drag: {},
-        priority: 1,
-        board_size: BOARD_SIZE
+        board_size: BOARD_SIZE,
+        GAME_STATE: Object.freeze({ENTER: 0, CREATED: 1, WAITING: 2, READY: 3, PLAYING: 4, ENDING: 5, OVER: 6, DONE: 7, HOME: 8 }),
+        state: 4,
     },
     computed: {
         activeItems: function() {

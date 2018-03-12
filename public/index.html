@@ -7,16 +7,30 @@
 </head>
 <body>
     <div id="app">
-        <h1>Testing out some cool things with Mouse movement!</h1>
-        <div id='board'>
-            <div id='board-body'>
-                <div class='board-row' v-for="row in board_size">
-                    <div class='boggle-tile' v-for="col in board_size" v-on:mouseenter="mouseenter($event, row, col)">
-                        <label>{{ getBoardChar(row, col) }}</label>
+        <!-- Site Entrance HTML -->
+        <template v-if="state === GAME_STATE.ENTER">
+            <h1 id='banner'>Welcome to boggle!!</h1>
+
+            <!-- We need something for entering a nickname / playerID -->
+        </template>
+
+        <!-- Home Page HTML -->
+        <template v-if="state === GAME_STATE.HOME">
+            <h1>This is where you could create a game, join a game, or play solo!</h1> 
+        </template>
+
+        <!-- Start playing HTML -->
+        <template v-if="state === GAME_STATE.PLAYING">
+            <div id='board' unselectable="on" class="unselectable">
+                <div id='board-body'>
+                    <div class='board-row' v-for="row in board_size">
+                        <div class='boggle-tile' v-for="col in board_size" v-on:mouseenter="mouseenter($event, row, col)">
+                            <label>{{ getBoardChar(row, col) }}</label>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </template>
 
     </div>
 
